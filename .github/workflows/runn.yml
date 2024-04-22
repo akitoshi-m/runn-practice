@@ -23,7 +23,7 @@ jobs:
         run: docker-compose ps
 
       - name: Runn test
-        run: docker-compose exec -it runn-practice_app_1 runn run runn-test.yml
+        run: docker-compose exec -it app runn run runn-test.yml
       
       - name: Clean up
         if: always()
