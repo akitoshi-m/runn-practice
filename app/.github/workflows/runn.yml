@@ -1,0 +1,26 @@
+name: runn test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        run: |
+          docker-compose -f app/docker-compose.yml up -d
+
+      - name: Runn test
+        run: |
+          docker-compose exec -it runn-practice-app-1 runn run runn-test.yml
+      
+      - name: Clean up
+        if: always()
+        run: docker-compose -f app/docker-compose.yml down

@@ -1,0 +1,13 @@
+desc: runnにてhttpリクエストのテストを行う
+runners:
+  req:
+    endpoint: http://127.0.0.1:80
+steps:
+  - 
+    desc: health check
+    req:
+      /health:
+        get:
+          body: null
+    test: |
+      current.res.status == 200
