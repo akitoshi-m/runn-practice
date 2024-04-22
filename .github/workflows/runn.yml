@@ -21,6 +21,9 @@ jobs:
 
       - name: Check Docker status
         run: docker-compose ps
+      
+      - name: Wait for Docker to start
+        run: sleep 3
 
       - name: Runn test
         run: docker-compose exec runn-practice_app_1 runn run runn-test.yml
