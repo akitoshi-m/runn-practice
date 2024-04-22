@@ -24,6 +24,9 @@ jobs:
 
       - name: Runn test
         run: docker-compose exec -it app runn run runn-test.yml
+
+      - name: Wait for 3 seconds
+        run: sleep 3
       
       - name: Clean up
         if: always()
