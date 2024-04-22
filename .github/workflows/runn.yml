@@ -22,11 +22,11 @@ jobs:
       - name: Check Docker status
         run: docker-compose ps
 
-      - name: Runn test
-        run: docker-compose exec -it app runn run runn-test.yml
-
       - name: Wait for 3 seconds
         run: sleep 3
+
+      - name: Runn test
+        run: docker-compose exec -it app runn run runn-test.yml
       
       - name: Clean up
         if: always()
