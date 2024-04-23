@@ -26,8 +26,8 @@ jobs:
         run: sleep 3
 
       - name: Runn test
-        run: docker-compose exec runn-practice_app_1 runn run runn-test.yml
-      
+        run: docker-compose exec app runn run runn-test.yml
+
       - name: Clean up
         if: always()
         run: docker-compose -f docker-compose.yml down
